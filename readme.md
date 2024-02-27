@@ -18,7 +18,9 @@ In the process, you must use at least four functions, two classes, two files, an
 
 ### Step 1: Review the Existing Code
 
-Firstly, analyze the given tic-tac-toe game code. Understand the flow and functionality before proceeding with the refactoring.
+~~Firstly, analyze the given tic-tac-toe game code. Understand the flow and functionality before proceeding with the refactoring.~~
+
+- [x] I have analyzed the `tic_tac_o_oh.py` code and played the game. There are comments where there should logically be functions. The board is a set size, and it's shape is determined only by a series of print statements. The whole game is set in nested **while True** loops. It is easily breakable and not reusable outside the console.
 
 ### Step 2: Identify Components to Refactor
 
@@ -95,4 +97,3 @@ Please submit the refactored code, your test case, and the written report.
 ### Evaluation Criteria
 
 Your refactoring will be evaluated on the clarity and modularity of your code, as well as the thoughtful reasoning behind your design decisions. Your test case should be robust and cover key aspects of the tic-tac-toe game functionality. The written report should accurately reflect your understanding of code refactoring, testing, and the flexibility of your new implementation.
-"I made a change" 
