@@ -9,6 +9,7 @@ board = [empty] * 9
 # Game loop
 while True:
     # Print board
+    # The shape of the board should be stored as a 2d data structure and uncoupled from the display.
     print(board[0], "|", board[1], "|", board[2])
     print("---------")
     print(board[3], "|", board[4], "|", board[5])
@@ -17,6 +18,8 @@ while True:
     print()
 
     # Check for win
+    # This needs to be a function.
+    # The win conditions are dependent on the size and shape of the board, so perhaps a method of the board.
     win_conditions = [(0,1,2), (3,4,5), (6,7,8), (0,3,6), (1,4,7), (2,5,8), (0,4,8), (2,4,6)]
     for wc in win_conditions:
         if board[wc[0]] == board[wc[1]] == board[wc[2]] != empty:
@@ -29,6 +32,9 @@ while True:
         exit(0)
 
     # Get next move
+    #  This part is doing a lot more than just 'Get next move'.
+    #  It is taking input, validating and adding the move to the board.
+    #  These should all be separate functions.
     while True:
         player = p1 if board.count(empty) % 2 == 1 else p2
         move = input("Next move for player " + player + " (0-8): ")

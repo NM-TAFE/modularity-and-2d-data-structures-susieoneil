@@ -24,7 +24,13 @@ In the process, you must use at least four functions, two classes, two files, an
 
 ### Step 2: Identify Components to Refactor
 
-Identify the parts of the code that can be improved. Determine which parts of the code can be grouped logically into separate modules.
+~~Identify the parts of the code that can be improved. Determine which parts of the code can be grouped logically into separate modules.~~
+
+- [x] The code would benefit from an MVC approach.  
+- A main UI to get moves and display to the user.  
+- A board class to store the moves.
+- A game class to analyze the moves and calculate wins.  
+(See notes in the code).
 
 ### Step 3: Modularizing the Code
 
