@@ -34,7 +34,11 @@ In the process, you must use at least four functions, two classes, two files, an
 
 ### Step 3: Modularizing the Code
 
-Refactor the code to create at least two files. These files should contain logically grouped functions and classes. Ensure the file names are appropriate for the division you have chosen.
+~~Refactor the code to create at least two files. These files should contain logically grouped functions and classes. Ensure the file names are appropriate for the division you have chosen.~~
+- After a first attempt at creating a UI module, I couldn't decide whether the UI should import the game or the game import the UI.  Both had potential issues for future reuse.
+I read through Raf's partial implementation and decided the string override on the game and board had more reuse with a few tweaks.  Perhaps if the game string returned both the board string and the current game state (ie. "Player X wins", or "invalid move, try again"), which could be generated from wins, error messages and such.
+I decided to work with his module set up, add the player as a separate object and skip the UI module.
+
 
 ### Step 4: Create a Modern Python Folder Structure
 
