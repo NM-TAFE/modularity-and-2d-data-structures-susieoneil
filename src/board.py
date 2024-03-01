@@ -21,8 +21,8 @@ class Board:
         self.size = size
         self.grid = self._create_2d_grid()
 
-    def _create_2d_grid(self) -> None:
-        ...
+    def _create_2d_grid(self):
+        return [[None] * self.size] * self.size
 
     def is_full(self) -> bool:
         ...
@@ -52,3 +52,9 @@ class Board:
 
     def __str__(self) -> str:
         return "\n".join([str(row) for row in self.grid])
+
+
+if __name__ == '__main__':
+    # For running temporary tests
+    print(Board(5))  # should print a 5x5 grid of None values.
+    ...
