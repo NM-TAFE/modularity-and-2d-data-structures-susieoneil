@@ -17,3 +17,6 @@ class TestBoard(unittest.TestCase):
                              [[None, None, None],
                               [None, None, None],
                               [None, None, None]])
+
+    def test_is_full_returns_false_if_grid_contains_none(self):
+        self.assertEqual(self.board.is_full(), False)

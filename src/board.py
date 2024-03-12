@@ -25,7 +25,11 @@ class Board:
         return [[None] * self.size] * self.size
 
     def is_full(self) -> bool:
-        ...
+        for row in self.grid:
+            if None in row:
+                return False
+            else:
+                return True
 
     def is_position_occupied(self, row, col) -> bool:
         return self.grid[row][col] is not None
@@ -56,5 +60,4 @@ class Board:
 
 if __name__ == '__main__':
     # For running temporary tests
-    print(Board(5))  # should print a 5x5 grid of None values.
     ...
