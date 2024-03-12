@@ -22,7 +22,8 @@ class Board:
         self.grid = self._create_2d_grid()
 
     def _create_2d_grid(self):
-        return [[None] * self.size] * self.size
+        row = [None] * self.size
+        return [row.copy() for _ in range(self.size)]
 
     def is_full(self) -> bool:
         for row in self.grid:
