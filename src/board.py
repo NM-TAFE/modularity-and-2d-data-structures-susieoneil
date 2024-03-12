@@ -46,8 +46,11 @@ class Board:
     def get_winner(self) -> None | Player:
         return self._has_horizontal_winner() or self._has_vertical_winner() or self._has_diagonal_winner()
 
-    def _has_horizontal_winner(self) -> None | Player:
-        ...
+    def _has_horizontal_winner(self):  # -> None | Player:
+        for row in self.grid:
+            player = row[0]
+            if player and all(players == player for players in row):
+                return player
 
     def _has_vertical_winner(self) -> None | Player:
         ...
