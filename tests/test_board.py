@@ -47,3 +47,20 @@ class TestBoard(unittest.TestCase):
         self.assertIsNot(board._has_vertical_winner(), 'x')
         self.assertIsNot(board._has_vertical_winner(), None)
         self.assertIs(board._has_vertical_winner(), 'o')
+
+    def test_has_diagonal_winner_returns_valid_player_from_diagonal_where_all_same(self):
+        board_empty = Board()
+        board_right = Board(3)
+        board_left = Board(3)
+
+        board_right.grid = [['x', 'o', None],
+                            ['x', 'x', 'o'],
+                            ['o', 'o', 'x']]
+
+        board_left.grid = [[None, 'x', 'o'],
+                           ['x', 'o', 'x'],
+                           ['o', 'x', 'x']]
+
+        self.assertIsNone(board_empty._has_diagonal_winner())
+        self.assertIs(board_right._has_diagonal_winner(), 'x')
+        self.assertIs(board_left._has_diagonal_winner(), 'o')

@@ -63,12 +63,31 @@ class Board:
                 return player
 
     def _has_diagonal_winner(self) -> None | Player:
-        ...
+        # check player in right diagonal
+        player_right = self.grid[0][0]
+        if player_right:
+            col = 0
+            diagonal_right = []
+            for row in self.grid:
+                diagonal_right.append(row[col])
+                col += 1
+            if all(players == player_right for players in diagonal_right):
+                return player_right
+
+        # check player in left diagonal
+        player_left = self.grid[0][-1]
+        if player_left:
+            col = -1
+            diagonal_left = []
+            for row in self.grid:
+                diagonal_left.append(row[col])
+                col -= 1
+            if all(players == player_left for players in diagonal_left):
+                return player_left
 
     def __str__(self) -> str:
         return "\n".join([str(row) for row in self.grid])
 
 
 if __name__ == '__main__':
-    # For running temporary tests
-    ...
+    pass
