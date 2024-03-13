@@ -38,3 +38,12 @@ class TestBoard(unittest.TestCase):
 
         self.assertIsNot(board._has_horizontal_winner(), None)
         self.assertIs(board._has_horizontal_winner(), player)
+
+    def test_has_vertical_winner_returns_valid_player_from_column_where_all_same(self):
+        board = Board(3)
+        board.grid = [['x', None, 'o'],
+                      ['x', None, 'o'],
+                      [None, None, 'o']]
+        self.assertIsNot(board._has_vertical_winner(), 'x')
+        self.assertIsNot(board._has_vertical_winner(), None)
+        self.assertIs(board._has_vertical_winner(), 'o')
