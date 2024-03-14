@@ -35,7 +35,10 @@ class Board:
         return self.grid[row][col] is not None
 
     def make_move(self, row, col, player) -> None:
-        if 0 > row > self.size or 0 > col > self.size:
+        # Fixed the logic not raising the error (see source: Check Range Separately)
+        # if row < 0 or row >= self.size or col < 0 or col >= self.size:
+        # Using range() might improve readability.
+        if row not in range(0, self.size) or col not in range(0, self.size):
             raise InvalidPositionError("Invalid position")
         if self.is_position_occupied(row, col):
             raise PositionOccupiedError("Position already occupied")
