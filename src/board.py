@@ -29,8 +29,7 @@ class Board:
         for row in self.grid:
             if None in row:
                 return False
-            else:
-                return True
+        return True
 
     def is_position_occupied(self, row, col) -> bool:
         return self.grid[row][col] is not None
@@ -86,7 +85,8 @@ class Board:
                 return player_left
 
     def __str__(self) -> str:
-        return "\n".join([str(row) for row in self.grid])
+        return "\n".join([str([str(col) if col else ' ' for col in row])
+                          for row in self.grid])
 
 
 if __name__ == '__main__':

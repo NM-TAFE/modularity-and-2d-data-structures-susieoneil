@@ -94,3 +94,12 @@ class Game:
             Player: The current player.
         """
         return self.current_player
+
+
+def __main():
+    game = Game()
+    game.play()
+
+
+if __name__ == '__main__':
+    __main()
