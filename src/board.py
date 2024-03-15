@@ -151,5 +151,15 @@ class Board:
         Returns:
             str: The string representation of the board.
         """
-        return "\n".join([str([str(col) if col else ' ' for col in row])
-                          for row in self.grid])
+        board_string = ""
+        row_divider = "---"
+        col_divider = "|"
+        for i, row in enumerate(self.grid):
+            # generate a string for each row
+            for j, col in enumerate(row):
+                board_string += (f" {str(col)} " if col else "   ")
+                board_string += col_divider if j != (self.size - 1) else "\n"
+            # generate a divider after each row except the last
+            if i != (self.size - 1):
+                board_string += row_divider + ((col_divider + row_divider) * (self.size - 1)) + "\n"
+        return board_string
