@@ -35,12 +35,14 @@ In the process, you must use at least four functions, two classes, two files, an
 ### Step 3: Modularizing the Code
 
 ~~Refactor the code to create at least two files. These files should contain logically grouped functions and classes. Ensure the file names are appropriate for the division you have chosen.~~
-- After a first attempt at creating a UI module, I couldn't decide whether the UI should import the game or the game import the UI.  Both had potential issues for future reuse.
-I read through Raf's partial implementation and decided the string override on the game and board had more reuse with a few tweaks.  Perhaps if the game string returned both the board string and the current game state (ie. "Player X wins", or "invalid move, try again"), which could be generated from wins, error messages and such.
+- [x] After a first attempt at creating a UI module, I couldn't decide whether the UI should import the game or the game import the UI.  Both had potential issues for future reuse.
+I read through Raf's partial implementation and decided the string override on the game and board had more reuse with a few tweaks.  Perhaps if the game string returned both the board string and the current game state (i.e. "Player X wins", or "invalid move, try again"), which could be generated from wins, error messages and such.
 I decided to work with his module set up, add the player as a separate object and skip the UI module.
+- [x] Upon further analysis I realize that the Player class is the data model, the Board class is the controller and the Game class is the viewer which handles the inputs and outputs. This is essentially the MVC approach I was aiming for.  The Game class could potentially be called by a UI other than the console, depending on how "sys.stdout" was used by the UI, as the Game class uses print statements. I have put the running of the game in the play_tic_tac_toe function of game.py, this makes it easy to start the game using a simple import and calling the function.  
 
 
 ### Step 4: Create a Modern Python Folder Structure
+- [x] Done
 
 The refactored code should adhere to the following modern Python folder structure:
 
@@ -64,11 +66,13 @@ tic_tac_toe/
   
 ### Step 5: Create a Test Case
 
-Develop at least one test case for your refactored code. The test case should reside in the 'tests' directory. 
+~~Develop at least one test case for your refactored code. The test case should reside in the 'tests' directory.~~ 
+- [x] Created a Test case for the Board class.
 
 ### Step 6: Implement 2D Data Structure
 
-Refactor the code such that it employs a 2D data structure for the tic-tac-toe game board.
+~~Refactor the code such that it employs a 2D data structure for the tic-tac-toe game board.~~
+- [x] Created a 2d list using list.copy().  This was required to ensure each row was uniquely referenced.
 
 ### Step 7: Written Report
 

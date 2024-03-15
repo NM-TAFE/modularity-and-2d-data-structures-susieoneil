@@ -118,10 +118,13 @@ class Game:
         return self.current_player
 
 
-def main():
+def play_tic_tac_toe():
+    """
+    Start and play a game
+    """
     game = Game()
     game.play()
 
 
 if __name__ == '__main__':
-    main()
+    play_tic_tac_toe()
