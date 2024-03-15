@@ -64,3 +64,11 @@ class TestBoard(unittest.TestCase):
         self.assertIsNone(board_empty._has_diagonal_winner())
         self.assertIs(board_right._has_diagonal_winner(), 'x')
         self.assertIs(board_left._has_diagonal_winner(), 'o')
+
+    def test_string_override_returns_a_suitable_game_grid(self):
+        self.assertEqual(str(self.board), "\n"
+                                          "   |   |   \n"
+                                          "---|---|---\n"
+                                          "   |   |   \n"
+                                          "---|---|---\n"
+                                          "   |   |   \n")

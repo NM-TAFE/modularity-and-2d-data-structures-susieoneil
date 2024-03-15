@@ -151,7 +151,7 @@ class Board:
         Returns:
             str: The string representation of the board.
         """
-        board_string = ""
+        board_string = "\n"
         row_divider = "---"
         col_divider = "|"
         for i, row in enumerate(self.grid):
