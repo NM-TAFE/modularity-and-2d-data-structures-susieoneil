@@ -1,5 +1,5 @@
 from player import Player
-from board import Board, BoardError, InvalidPositionError, PositionOccupiedError
+from board import Board, BoardError
 
 
 class Game:
@@ -31,8 +31,11 @@ class Game:
         """
         while not self.is_over():
             print(self)
-            row = int(input(f"Player {self.current_player.symbol} enter row: "))
-            col = int(input(f"Player {self.current_player.symbol} enter col: "))
+            print(f"Player {self.current_player.symbol} enter row (0-2): ", end='')
+            row = self.get_int_from_input()
+            print(f"Player {self.current_player.symbol} enter col (0-2): ", end='')
+            col = self.get_int_from_input()
+
             self.make_move(row, col)
 
         print(self)
@@ -41,6 +44,25 @@ class Game:
             print("It's a draw!")
         else:
             print(f"Player {winner.symbol} wins!")
+
+    @staticmethod
+    def get_int_from_input() -> int:
+        """
+        Takes and validates user input until an integer is entered.
+
+        Returns:
+             value: an integer
+        """
+        input_value = ''
+        while not input_value.isdigit():
+            input_value = input()
+            try:
+                value = int(input_value)
+            except ValueError:
+                print("Invalid input, enter a number: ", end='')
+                continue
+            else:
+                return value
 
     def make_move(self, row, col) -> None:
         """
@@ -96,10 +118,10 @@ class Game:
         return self.current_player
 
 
-def __main():
+def main():
     game = Game()
     game.play()
 
 
 if __name__ == '__main__':
-    __main()
+    main()
