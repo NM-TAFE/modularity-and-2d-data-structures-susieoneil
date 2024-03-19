@@ -75,6 +75,7 @@ tic_tac_toe/
 - [x] Created a 2d list using list.copy().  This was required to ensure each row was uniquely referenced.
 
 ### Step 7: Written Report
+- [x] Done - report.md
 
 Once you have completed your refactoring, write a brief report addressing the following:
 
@@ -83,6 +84,7 @@ Once you have completed your refactoring, write a brief report addressing the fo
 3. How you would modify your refactored code to handle a custom-sized tic-tac-toe game (larger than 3x3), and how this implementation would be easier to handle than in the original code.
 
 ### Step 8: Short Answer (Knowledge Questions)
+- [x] Done - kba.md
 
 Provide brief answers to the knowledge-question worksheet.
 

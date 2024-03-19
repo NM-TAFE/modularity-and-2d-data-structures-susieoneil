@@ -34,8 +34,7 @@ class Board:
         Returns:
             list: Square 2d list of None values
         """
-        row = [None] * self.size
-        return [row.copy() for _ in range(self.size)]
+        return [[None for _ in range(self.size)] for _ in range(self.size)]
 
     def is_full(self) -> bool:
         """
